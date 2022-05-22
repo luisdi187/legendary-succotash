@@ -80,11 +80,8 @@ def operacionesEnSublistas(pLista1, pLista2):
     while pLista1 != []:
         subLista1 = pLista1[0]
         numero1 = subLista1[0]
-        subLista1 = subLista1[1:]
-        operacion = subLista1[0]
-        subLista1 = subLista1[1:]
-        numero2 = subLista1[0]
-        subLista1 = subLista1[1:]
+        operacion = subLista1[1]
+        numero2 = subLista1[2]
         pLista1 = pLista1[1:]
         if operacion == "+":
             resultado = numero1 + numero2
@@ -95,7 +92,7 @@ def operacionesEnSublistas(pLista1, pLista2):
         elif operacion == "/":
             resultado = numero1 / numero2
         else:
-            print("Las operaciones válidas son ‘+’, ‘-’, ‘*’, ‘/’")
+            return ("Las operaciones válidas son ‘+’, ‘-’, ‘*’, ‘/’")
         for elemento in pLista2:
             if elemento < resultado:
                 nuevaSubLista.append(resultado)
@@ -106,5 +103,5 @@ def operacionesEnSublistas(pLista1, pLista2):
         nuevaLista.append(nuevaSubLista)
         nuevaSubLista = []
     return nuevaLista   
-print(operacionesEnSublistas([[2,"+",3],[4,"/",2],[4,"*",3]], [2,14]))
+print(operacionesEnSublistas([[4, "*", 4],[8, "-", 1]], [5, 9, 16]))
 ________________________________________________________________________________-
