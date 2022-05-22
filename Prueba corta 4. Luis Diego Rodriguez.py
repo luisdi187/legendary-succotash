@@ -72,6 +72,8 @@ def sumaNumeros(lista):
 #print(sumaNumeros([1,"a",2,"b",3,"c"]))
 
 _____________________________________________________________
+#Reto 1
+
 def operacionesEnSublistas(pLista1, pLista2):
     nuevaLista = []
     nuevaSubLista = []
@@ -103,5 +105,36 @@ def operacionesEnSublistas(pLista1, pLista2):
         nuevaLista.append(nuevaSubLista)
         nuevaSubLista = []
     return nuevaLista   
-print(operacionesEnSublistas([[4, "*", 4],[8, "-", 1]], [5, 9, 16]))
-________________________________________________________________________________-
+
+#print(operacionesEnSublistas([[4, "*", 4],[8, "-", 1]], [5, 9, 16]))
+________________________________________________________________________________
+#Reto 3
+
+def trioListas(pLista1, pLista2):
+    nuevaLista = []
+    indice = 0
+    ciclo = 0
+    if pLista1 == []  or pLista2 == []:
+        return []
+    while pLista2 != []:
+        elemento = pLista2[0]
+        if indice != len(pLista1):
+            while indice < len(pLista1):
+                subLista = pLista1[indice]
+                numero = subLista[2]
+                if elemento == subLista[0]:
+                    while(numero != 0):
+                        nuevaLista.append(subLista[1])
+                        numero -= 1
+                        ciclo += 1
+                indice += 1
+            if ciclo == 0 : 
+                nuevaLista.append(elemento)
+        pLista2 = pLista2[1:]
+        indice = 0
+        ciclo = 0
+    return nuevaLista
+
+# print(trioListas([['s',  'z',  2], ['a',  'i',  4]],['e',  's',  'p',  'a', 'ñ',  'a']))
+# print(trioListas([['a',  'e',  2], ['m',  'p',  3]],['m',  'a',  'm',  'a']))
+# print(trioListas([['t',  't',  1], ['e',  'e',  1]],['k',  'e',  'n',  'n', 'e',  't']))
