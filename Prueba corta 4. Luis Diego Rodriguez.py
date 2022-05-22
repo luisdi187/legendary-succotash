@@ -11,3 +11,4 @@ def operacionesEnSublistas(pLista1, pLista2):
             print (resultado)
 operacionesEnSublistas([[51,"+",2],[8,"-", 25]], [2,14])
 
+hola
