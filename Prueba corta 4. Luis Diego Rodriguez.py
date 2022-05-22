@@ -176,3 +176,19 @@ def encontrarNumerosAmigos(pNumero):
     return amigos
 
 print(encontrarNumerosAmigos(1220))
+___________________________________________________________________________
+def encontrarNumerosAmigos(pNum):
+    for a in range(1, pNum):
+        s = 0
+        for n in range(1, a):
+            if a%n==0:
+                s=s+n
+        for b in range (1, pNum):
+            t = 0
+            for n in range (1,b):
+                if b%n==0:
+                    t=t+n
+            if s == b and t==a and a != b:
+                print(a,b)
+encontrarNumerosAmigos(1220)
+_______________________________________________________________________
