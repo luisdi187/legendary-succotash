@@ -70,3 +70,41 @@ def sumaNumeros(lista):
     return resultado
 
 #print(sumaNumeros([1,"a",2,"b",3,"c"]))
+
+_____________________________________________________________
+def operacionesEnSublistas(pLista1, pLista2):
+    nuevaLista = []
+    nuevaSubLista = []
+    if pLista1 == []  or pLista2 == []:
+        return []
+    while pLista1 != []:
+        subLista1 = pLista1[0]
+        numero1 = subLista1[0]
+        subLista1 = subLista1[1:]
+        operacion = subLista1[0]
+        subLista1 = subLista1[1:]
+        numero2 = subLista1[0]
+        subLista1 = subLista1[1:]
+        pLista1 = pLista1[1:]
+        if operacion == "+":
+            resultado = numero1 + numero2
+        elif operacion == "-":
+            resultado = numero1 - numero2
+        elif operacion == "*":
+            resultado = numero1 * numero2
+        elif operacion == "/":
+            resultado = numero1 / numero2
+        else:
+            print("Las operaciones válidas son ‘+’, ‘-’, ‘*’, ‘/’")
+        for elemento in pLista2:
+            if elemento < resultado:
+                nuevaSubLista.append(resultado)
+            elif elemento == resultado:
+                nuevaSubLista.append(0)
+            else:
+                nuevaSubLista.append(elemento)
+        nuevaLista.append(nuevaSubLista)
+        nuevaSubLista = []
+    return nuevaLista   
+print(operacionesEnSublistas([[2,"+",3],[4,"/",2],[4,"*",3]], [2,14]))
+________________________________________________________________________________-
