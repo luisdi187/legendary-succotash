@@ -138,3 +138,41 @@ def trioListas(pLista1, pLista2):
 # print(trioListas([['s',  'z',  2], ['a',  'i',  4]],['e',  's',  'p',  'a', 'ñ',  'a']))
 # print(trioListas([['a',  'e',  2], ['m',  'p',  3]],['m',  'a',  'm',  'a']))
 # print(trioListas([['t',  't',  1], ['e',  'e',  1]],['k',  'e',  'n',  'n', 'e',  't']))
+
+#///////////////////////////////////////////////////////////////////////////////////////////////////////////#
+
+#Reto 2
+
+def totalDivisores(pNum):
+    divisor = pNum
+    divisores = 0
+    total = 0
+    
+    while(pNum > 1):
+        if(divisor % pNum == 0):
+            divisores = pNum
+            pNum = pNum - 1
+            total += divisores
+        else:
+            pNum = pNum - 1
+    return total
+
+def encontrarNumerosAmigos(pNumero):
+    numero = 0 
+    pareja = []
+    amigos = []
+    
+    if pNumero < 2:
+        return "El numero debe ser mayor a 2"
+    for elemento in range(2, pNumero+1):
+        numero = elemento + 1
+        while(numero != pNumero):
+            if(totalDivisores(numero) == elemento):
+                if(totalDivisores(elemento) == numero):
+                    pareja.append(numero)
+                    pareja.append(elemento)
+                    amigos.append(pareja)
+            numero += 1
+    return amigos
+
+print(encontrarNumerosAmigos(1220))
