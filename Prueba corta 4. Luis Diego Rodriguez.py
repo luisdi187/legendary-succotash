@@ -11,4 +11,14 @@ def operacionesEnSublistas(pLista1, pLista2):
             print (resultado)
 operacionesEnSublistas([[51,"+",2],[8,"-", 25]], [2,14])
 
-hola
+def sustituir(sublista,caracter,lista):
+    lista2 = []
+    if(sublista  == [] or lista == []):
+        return []
+    for elemento in lista:
+        if(elemento in sublista):
+           lista2.append(caracter)
+        else:
+            lista2.append(elemento)
+    return lista2
+
